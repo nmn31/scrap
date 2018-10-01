@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<img src="http://www.tvtango.com/uploads/downloadLogos/NetLogoTravel2.jpg">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
@@ -223,7 +224,28 @@ foreach ($partDescription as $Numbers) {
 						?>
 
 	           
-			           <td  style = "border: aquamarine 1px solid;" colspan = "<?php echo $key->value; ?>" ><?php echo $child2->nodeValue ; ?></td>
+			           <td  style = "border: aquamarine 1px solid;" colspan = "<?php echo $key->value; ?>" ><?php echo $child2->nodeValue ; 
+
+                foreach ($child2->childNodes as $child3) {
+                 if($child3->tagName =='img'){
+                  foreach ($child3->attributes as $key1) {
+                    if($key1->name == 'src'){ ?>
+                      <img src = "http://www.tvtango.com<?php echo $key1->value; ?>" />
+                   <?php }
+                    # code...
+                  }
+                  //print_r($child3->attributes);
+                  # code...
+                 }
+                  
+                }
+            
+
+                 ?>
+                
+                  
+
+                 </td>
 			          
 			         <?php
 
