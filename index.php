@@ -189,6 +189,10 @@ error_reporting(E_ALL);
  	$scarp_url = 'http://www.tvtango.com/listings?filters%5Bdate%5D%5Bmonth%5D='.$_POST['filters']['date']['month'].'&filters%5Bdate%5D%5Bday%5D='.$_POST['filters']['date']['day'].'&filters%5Bdate%5D%5Byear%5D='.$_POST['filters']['date']['year'].'&commit.x=21&commit.y=5';
 	$PostsData = new WebScraping($scarp_url);
 	$partDescription = $PostsData->pathObj->query('//table[@class="broadcast_grid"]');
+  ?>
+  <h1>On Date MM/DD/YYY</h1><BR>
+  <h2><?PHP ECHO $_POST['filters']['date']['month'].'/'.$_POST['filters']['date']['day'].'/'.$_POST['filters']['date']['year']; ?></h2>
+  <?php
  	
 	echo "<table class = table";
 $count = 0;
